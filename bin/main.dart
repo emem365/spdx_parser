@@ -36,6 +36,9 @@ void main(List<String> arguments) async {
     final markdown = converter.parse();
     print('\nOutput:');
     print(markdown);
+    print('\nSaving to file...');
+    await File('converted.md').writeAsString(markdown);
+    print('Saved to converted.md');
   } catch (e) {
     print('Error: ${e.toString()}');
     exit(4);
